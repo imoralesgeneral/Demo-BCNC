@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:h2:mem:demodb
+    driverClassName: org.h2.Driver
+    username: sa
+    jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+    h2:
+      console:
+        enabled: true
+
+endpoints:
+  albums: "https://jsonplaceholder.typicode.com/albums"
+  photos: "https://jsonplaceholder.typicode.com/photos"
+
+management.endpoints.web.exposure.include: "*"
+management:
+  endpoint:
+    prometheus:
+      enabled: true
